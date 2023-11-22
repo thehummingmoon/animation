@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initialscale=
+1">
+<title>Image rotate</title>
+<style >
+body{
+background: linear-gradient(90deg, pink, skyblue,
+salmon);
+}
+img{
+width: 320px;
+height: 200px;
+position: absolute;
+}
+.container{
+width: 350px;
+height: 200px;
+position: relative;
+margin-top: 15%;
+margin-left: 40%;
+perspective: 1000px;
+transform-style: preserve-3d ;
+transform: rotateX(-10deg) rotateZ(-10deg);
+animation: ror 20s linear infinite;
+}
+@keyframes ror{
+50%{
+transform: rotateX(35deg);
+}
+80%{
+transform: rotateX(-30deg);
+}
+}
+.images{
+width: 100%;
+position: absolute;
+transform-style: preserve-3d;
+animation: rotate 20s linear infinite;
+}
+@keyframes rotate{
+from{
+}
+to{
+transform: rotateY(360deg);
+}
+}
+img:nth-child(1){
+transform: rotateY(60deg) translateZ(300px);
+}
+img:nth-child(2){
+transform: rotateY(120deg) translateZ(300px);
+}
+img:nth-child(3){
+transform: rotateY(180deg) translateZ(300px);
+}
+img:nth-child(4){
+transform: rotateY(240deg) translateZ(300px);
+}
+img:nth-child(5){
+transform: rotateY(300deg) translateZ(300px);
+}
+img:nth-child(6){
+transform: rotateY(360deg) translateZ(300px);
+}
+img:hover{
+width: 340px;
+height: 210px;
+cursor: pointer;
+}
+div.slide-left {
+width:100%;
+overflow:hidden;
+}
+div.slide-left h1 {
+animation: slide-left 10s;
+}
+@keyframes slide-left {
+from {
+margin-left: 100%;
+width: 300%;
+}
+to {
+margin-left: 0%;
+width: 100%;
+}
+}
+</style>
+</head>
+<body>
+<div class="slide-left">
+<h1 style="font-family: cursive;color: blue;">IMAGE
+ROTATION </h1>
+</div>
+<div class="container">
+<div class="images">
+<img src="london.jpg">
+<img src="home.jpg">
+<img src="fiji.jpg">
+<img src="singapor.jpg">
+<img src="australia.jpg">
+<img src="riodejanio.jpg">
+<img src="australia.jpg">
+</div>
+</div>
+</body>
+</html>
